@@ -1,0 +1,53 @@
+<!-- my-dialog.component.html -->
+<div class="header">
+    <h2>Add New Customer</h2>
+    <mat-icon (click)="onCancel()" class="cancel">cancel</mat-icon>
+</div>
+<form [formGroup]="form">
+
+  <div class="form-group">
+    <label for="name">Name <span class="imp">*</span></label>
+    <input type="text" formControlName="name" id="name" placeholder="Enter name">
+    <div *ngIf="f.name.invalid && f.name.touched" class="error">
+      <div *ngIf="f.name.errors.required" class="error-text">required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email <span class="imp">*</span></label>
+    <input type="email" formControlName="email" id="email" placeholder="Enter email">
+    <div *ngIf="f.email.invalid && (f.email.touched || formSubmitted)" class="error">
+      <div *ngIf="f.email.errors.required" class="error-text">required</div>
+      <div *ngIf="f.email.errors.email" class="error-text">Invalid email format</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="region">Region <span class="imp">*</span></label>
+    <select formControlName="region" id="region">
+      <option value="" disabled selected>Select region</option>
+      <option value="region1">Region 1</option>
+      <option value="region2">Region 2</option>
+    </select>
+    <div *ngIf="f.region.invalid && (f.region.touched || formSubmitted)" class="error">
+        <div *ngIf="f.region.errors?.required" class="error-text">required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="country">Country</label>
+    <select formControlName="country" id="country">
+      <option value="" disabled selected>Select country</option>
+      <option value="country1">Country 1</option>
+      <option value="country2">Country 2</option>
+    </select>
+    <div *ngIf="f.country.invalid && f.country.touched" class="error">
+      <div *ngIf="f.country.errors.required" class="error-text">required</div>
+    </div>
+  </div>
+
+</form>
+
+<div class="customer-buttons">
+  <button (click)="onSubmit()" mat-raised-button color="primary">Create Customer</button>
+</div>

@@ -1,0 +1,48 @@
+<div class="header">
+    <h2>Add Pin</h2>
+    <mat-icon (click)="onCancel()" class="cancel">cancel</mat-icon>
+</div>
+<form [formGroup]="form">
+
+  <div class="form-group">
+    <label for="title">Title <span class="imp">*</span></label>
+    <input type="text" formControlName="title" id="title">
+    <div *ngIf="f.title.invalid && f.title.touched" class="error">
+      <div *ngIf="f.title.errors.required" class="error-text">required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Select Image <span class="imp">*</span></label>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" id="image" formControlName="image">
+    <div *ngIf="f.image.invalid && (f.image.touched || formSubmitted)" class="error">
+      <div *ngIf="f.image.errors?.required" class="error-text">required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="collaborator">Collaborator <span class="imp">*</span></label>
+    <select formControlName="collaborator" id="collaborator">
+      <option value="" disabled selected>Select collaborator</option>
+      <option value="collaborator1">Collaborator 1</option>
+      <option value="collaborator2">Collaborator 2</option>
+    </select>
+    <div *ngIf="f.collaborator.invalid && (f.collaborator.touched || formSubmitted)" class="error">
+        <div *ngIf="f.collaborator.errors?.required" class="error-text">required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Privacy <span class="imp">*</span></label>
+    <mat-radio-group formControlName="privacy" class="custom-radio-group">
+      <mat-radio-button value="public" color="primary">Public</mat-radio-button>
+      <span class="radio-space"></span> 
+      <mat-radio-button value="private">Private</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+</form>
+
+<div class="customer-buttons">
+  <button (click)="onSubmit()" mat-raised-button color="primary">Create Pin</button>
+</div>

@@ -1,0 +1,115 @@
+:host {
+    display: block;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.form-group {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 15px;
+}
+
+label {
+    flex: 0 0 150px;
+    margin-right: 10px;
+}
+
+label .imp {
+    color: red; 
+}
+
+input, select {
+    flex: 1; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23616161" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 24px auto;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    // margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button[type="button"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 5px; 
+}
+
+.error-text {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.customer-buttons {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 20px;
+}
+
+.customer-buttons button {
+    // margin-right: 10px;
+    border-radius: 5px;
+}
+
+.cancel {
+    color: #007bff;
+    cursor: pointer;
+}
+
+::ng-deep .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #3778F6;
+}
+
+::ng-deep .mat-radio-button.mat-primary .mat-radio-inner-circle, .mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
+   background-color: #3778F6;
+}
+
+.radio-space {
+    margin-right: 16px; 
+ }
+
+  

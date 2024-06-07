@@ -1,0 +1,55 @@
+/* src/app/pins-table/pins-table.component.css */
+.table-container {
+    margin: 30px;
+}
+
+table {
+    width: 100%;
+
+}
+
+td,
+th {
+    text-align: left;
+}
+
+tr.mat-row, tr.mat-footer-row {
+    height: 72px;
+}
+
+.divider {
+    margin: 5px 0; /* Adjust margin if needed */
+}
+
+.header-cell {
+    background-color: #E4EDFF;
+}
+
+.heading-container {
+    display: flex;
+    flex-direction: column; /* Change flex direction to column */
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-clr {
+    width: 151px;
+    height: 50px;
+    padding: 13px 16px; /* Adjust padding as needed */
+    border-radius: 8px; /* Adjust the radius as needed */
+    color: #E4EDFF;
+    font-weight: 900;
+    font-size: medium;
+    background: #3778F6;
+    cursor: pointer;
+}
+
+/* Position the button container at the bottom */
+.button-container {
+    margin-top: 10px; /* Adjust the top margin to create space between heading and buttons */
+    align-self: flex-end; /* Align buttons to the end of the container */
+}

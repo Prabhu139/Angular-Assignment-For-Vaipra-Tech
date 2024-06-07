@@ -1,0 +1,42 @@
+<div class="table-container">
+    <div class="heading-container">
+      <h2>List of Pins</h2>
+      <div class="button-container">
+        <button mat-raised-button class="btn-clr" (click)="addCustomer('customer')">Add Customer</button>
+        <button mat-raised-button class="btn-clr" (click)="addPin('pin')">Add Pin</button>
+      </div>
+    </div>
+    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef class="header-cell"> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="images">
+        <th mat-header-cell *matHeaderCellDef class="header-cell"> Images </th>
+        <td mat-cell *matCellDef="let element">
+          <img src="assets/{{element.images}}.png" alt="{{element.images}}" width="50">
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="collaborators">
+        <th mat-header-cell *matHeaderCellDef class="header-cell"> Collaborators </th>
+        <td mat-cell *matCellDef="let element">
+          <ng-container *ngFor="let collaborator of getCollaborators(element.collaborators)">
+            {{ collaborator }}<br *ngIf="collaborator !== getCollaborators(element.collaborators).slice(-1)[0]">
+          </ng-container>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="privacy">
+        <th mat-header-cell *matHeaderCellDef class="header-cell"> Privacy </th>
+        <td mat-cell *matCellDef="let element"> {{element.privacy}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
