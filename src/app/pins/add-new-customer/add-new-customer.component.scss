@@ -1,4 +1,3 @@
-/* my-dialog.component.css */
 :host {
     display: block;
     padding: 20px;
@@ -16,22 +15,22 @@ h2 {
 }
 
 .form-group {
-    display: flex; /* Display field name and input field in a row */
-    align-items: center; /* Align items vertically */
+    display: flex; 
+    align-items: center; 
     margin-bottom: 15px;
 }
 
 label {
-    flex: 0 0 150px; /* Set fixed width for field name */
+    flex: 0 0 150px;
     margin-right: 10px;
 }
 
 label .imp {
-    color: red; /* Style the asterisk indicating required fields */
+    color: red; 
 }
 
 input, select {
-    flex: 1; /* Take remaining space */
+    flex: 1; 
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -75,7 +74,7 @@ button[type="button"] {
     color: #dc3545;
     font-size: 14px;
     margin-top: 5px;
-    margin-left: 5px; /* Adjust the margin as needed */
+    margin-left: 5px;
 }
 
 .error-text {
@@ -87,7 +86,7 @@ button[type="button"] {
 
 .customer-buttons {
     display: flex;
-    justify-content: flex-end; /* Align button to the right */
+    justify-content: flex-end; 
     margin-top: 20px;
 }
 
